@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className='App'>
-      <div className='list-data'>
+      <div className='List-data'>
         <table class='table table-striped'>
           <thead>
             <tr>
