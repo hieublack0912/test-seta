@@ -1,5 +1,15 @@
 # testSeta
 
 Ex1: 
->1. src/components/Ex1/Test1.js 
->2. src/components/Ex1/Test2.js 
+```bash
+>1. test-seta/src/components/Ex1/Test1.js 
+```
+
+```bash
+>2. test-seta/src/components/Ex1/Test2.js 
+```
+
+run project
+```bash
+npm run start or yarn start
+```
