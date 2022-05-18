@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPost } from '../../store/postSlice';
+import { createPost, setPost } from '../../store/postSlice';
 import './App.css';
 
 function App() {
@@ -12,6 +13,10 @@ function App() {
         dispatch(setPost(res));
       });
   }
+
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
   return (
     <div className='App'>
       <div className='list-data'>
@@ -46,6 +51,8 @@ function App() {
             className='form-control'
             id='exampleInputEmail1'
             aria-describedby='emailHelp'
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
           />
         </div>
         <div className='form-group mt-4'>
@@ -53,12 +60,23 @@ function App() {
           <textarea
             className='form-control'
             id='exampleFormControlTextarea1'
-            rows='3'></textarea>
+            rows='3'
+            value={body}
+            onChange={(e) => setBody(e.target.value)}
+          />
         </div>
         <input
           type={'button'}
           className='btn btn-secondary mt-4'
           value='Submit'
+          onClick={() =>
+            dispatch(
+              createPost({
+                title: title,
+                body: body,
+              })
+            )
+          }
         />
       </div>
     </div>
